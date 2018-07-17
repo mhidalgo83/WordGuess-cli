@@ -1,4 +1,6 @@
 var Letter = function (character) {
+	//Guesses left...
+	this.guessesLeft = 10;
 	//Takes input and converts to upper case
 	this.character = character.toUpperCase();
 	//Sets the guess to false
@@ -6,7 +8,7 @@ var Letter = function (character) {
 	//Function that takes in the user guess and displays the guess if true, or displays an underscore in place of the letter
 	this.showCharacter = function () {
 		if (this.correctGuess) {
-			return this.character
+			return this.character;
 		}
 		else {
 			return "_";
@@ -24,5 +26,5 @@ var Letter = function (character) {
 }
 
 
-// //export Letter constructor so that Word.js can use it.
+//Export Letter constructor so that Word.js can use it.
 module.exports = Letter
