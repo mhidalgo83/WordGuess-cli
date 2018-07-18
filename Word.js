@@ -24,15 +24,16 @@ var Word = function (word) {
     }
     // Function to make a guess...
     this.makeGuess = function (guess) {
+        var isCorrect = false;
         //Calls function from Letter, and passes in the guess (user generated)
         for (var i = 0; i < this.letters.length; i++) {
             this.letters[i].checkLetter(guess);
             //Makes the makeGuess function true if this condition is met...
             if (this.letters[i].checkLetter(guess)) {
-                return true;
+                isCorrect = true;
             }
             //Default condition of makeGuess function, used for scoring...
-        } return false;
+        } return isCorrect;
     }
     //Checks to see if the win condition is met...
     this.hasWon = function () {
